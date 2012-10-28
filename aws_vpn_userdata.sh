@@ -8,11 +8,12 @@
 # 3) Change USERNAME & PASSWORD below. These credentials are used to download OpenVPN client key & certs via HTTPS.
 # 4) Launch new instance into the VPC. Use Ubuntu Server 12.04 AMI. Copy/paste this file as User Data for the instance.
 # 5) Create new Elastic IP and associate it with the launched instance. This IP is VPN server's public address to which clients will connect.
-# 6) Wait for the instance to launch and go to https://<INSTANCE_PUBLIC_ADDRESS/ Authenticate with USERNAME & PASSWORD.
-# 7) Download ca.crt, client.crt and client.key
-# 8) Setup VPN client to connect to server's public address using TCP and downloaded certs & key file
-# 9) Optionally download client.conf and use it to set up the client (openvpn client.conf)
-# 10) Profit!
+# 6) Set instance's source/destination check to false (this allows VPN server to NAT traffic to internet)
+# 7) Wait for the instance to launch and go to https://<INSTANCE_PUBLIC_ADDRESS/ Authenticate with USERNAME & PASSWORD.
+# 8) Download ca.crt, client.crt and client.key
+# 9) Setup VPN client to connect to server's public address using TCP and downloaded certs & key file
+# 10) Optionally download client.conf and use it to set up the client (openvpn client.conf)
+# 11) Profit!
 
 USERNAME=username
 PASSWORD=password
