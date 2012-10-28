@@ -137,6 +137,7 @@ EOF
 
 
 iptables -t nat -A POSTROUTING -s ${VPN_NETWORK}/${VPN_NETMASK} -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s ${PRIVATE_NETWORK}/${PRIVATE_NETMASK} -o eth0 -j MASQUERADE
 echo 1 > /proc/sys/net/ipv4/ip_forward
 iptables-save > /etc/iptables.rules
 cat > /etc/network/if-pre-up.d/iptablesload <<EOF
